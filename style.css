@@ -68,6 +68,7 @@ a, a:active, a:hover, a:focus {
     position: fixed;
     left: 0;
     width: 100%;
+    height: 10vh;
     color: #ffffff;
     padding: 10px 10vw;
     z-index: 111;
