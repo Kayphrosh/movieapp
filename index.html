@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Movie App</title>
 </head>
-<body class="noSelect">
+<body>
     <section class="showcase">
         <div class="top-bar">
             <div class="hamburger">
@@ -34,7 +34,9 @@
             </ul>
             <div class="search">
                 <span class="iconify" id="search-icon" data-icon="eva:search-outline" data-inline="false"></span>
-                <input type="search" placeholder="search movies" name="" id="search">
+                <form id="form">
+                    <input type="text" id="search"  placeholder="Search">
+                </form>
                 <span class="iconify" style="color: aliceblue;" data-icon="fa-solid:moon" data-inline="false"></span>
             </div>
         </div>
