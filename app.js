@@ -38,18 +38,23 @@ const hamburger = document.querySelector(".hamburger");
 const navLinks =  document.querySelector(".navbar");
 const links = document.querySelectorAll(".navbar li");
 const showcase = document.querySelector(".top-bar");
-const mediaQuery = window.matchMedia('(max-width: 768px)')
+const mediaQuery = window.matchMedia('(max-width: 768px)');
+const searchInput = document.querySelector(".search");
 
 
 hamburger.addEventListener("click", () => {
     if("mediaQuery.matches", navLinks.classList.toggle("open"))
         {  
-        showcase.style.height = "60vh";
+        showcase.style.height = "70vh";
         showcase.style.transition = "1000ms ease-in";
+        searchInput.style.transform = "translateY(0%)";
+        searchInput.style.top = "10px";
+        hamburger.style.transform = "translateY(0%)";
+        hamburger.style.top = "0px";
         links.forEach(link =>  {
             link.classList.toggle("fade"); 
     
-            hamburger.classList.toggle('toggle');
+            hamburger.classList.toggle('toggle' );
         });
   
     } else{
@@ -58,8 +63,12 @@ hamburger.addEventListener("click", () => {
     
             hamburger.classList.toggle('toggle');
         });
-        showcase.style.height = "8vh"
-        showcase.style.transition = "1000ms ease-in"
+        showcase.style.height = "8vh";
+        showcase.style.transition = "1000ms ease-in";
+        searchInput.style.transform = "translateY(-50%)";
+        searchInput.style.top = "50%";
+        hamburger.style.transform = "translateY(-50%)";
+        hamburger.style.top = "50%";
     }
     
    
@@ -67,7 +76,7 @@ hamburger.addEventListener("click", () => {
 
 
 
-const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=def445bf6e7b03a17a250c80ff2931bc&page=2'
+const API_URL = 'https://api.themoviedb.org/3/discover/movie?primary_release_year=2020&sort_by=popularity.desc&api_key=def445bf6e7b03a17a250c80ff2931bc&page=12'
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
 const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=def445bf6e7b03a17a250c80ff2931bc&query="'
 
