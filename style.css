@@ -141,7 +141,7 @@ a, a:active, a:hover, a:focus {
     border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.7);
     background-blend-mode: multiply;
-    background-position: top center;
+    background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
@@ -158,7 +158,7 @@ a, a:active, a:hover, a:focus {
 #left {
     position: absolute;
     top: 47%;
-    right: 80px;
+    left: 80px;
     background-color: transparent;
     border: none;
     outline: none;
@@ -169,7 +169,7 @@ a, a:active, a:hover, a:focus {
 #right {
     position: absolute;
     top: 47%;
-    left: 80px;
+    right: 80px;
     background-color: transparent;
     border: none;
     outline: none;
@@ -221,7 +221,7 @@ a, a:active, a:hover, a:focus {
 }
 .slides-content a {
     display: flex;
-    font-weight: 600;
+    font-weight: 500;
     text-transform: uppercase;
     background-color:#78092F;
     color: #ffffff;
@@ -231,13 +231,15 @@ a, a:active, a:hover, a:focus {
     align-items: center;
     margin-top: 40px;
     padding: 5px 25px;
-    font-size: 14px;
+    font-size: 12px;
     z-index: 1;
     opacity: 11;
+    transition: 1s ease;
 }
 .slides-content a:hover {
     background-color: transparent;
     color: #ffffff;
+    transform: scale(0.86);
 }
 .slides-content a .iconify {
     font-size: 30px;
@@ -261,11 +263,11 @@ a, a:active, a:hover, a:focus {
     }
     #left {
         font-size: 34px;
-        right: 20px;
+        left: 20px;
     }
     #right {
         font-size: 34px;
-        left: 20px;
+        right: 20px;
     }
     .showcase {
         position: relative;
@@ -426,32 +428,11 @@ a, a:active, a:hover, a:focus {
   justify-content: flex-end;
   background-color: var(--secondary-color);
 }
-
-/* .search {
-  background-color: transparent;
-  border: 2px solid var(--primary-color);
-  border-radius: 50px;
-  font-family: inherit;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  color: #fff;
-}
-
-.search::placeholder {
-  color: #7378c5;
-}
-
-.search:focus {
-  outline: none;
-  background-color: var(--primary-color);
-} */
-
 .main {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
-
 .movie {
   width: 300px;
   margin: 1rem;
@@ -462,11 +443,9 @@ a, a:active, a:hover, a:focus {
   border-radius: 3px;
   width: 350px;
 }
-
 .movie img {
   width: 100%;
 }
-
 .movie-info {
   color: #fcfcfc;
   display: flex;
@@ -475,30 +454,24 @@ a, a:active, a:hover, a:focus {
   padding: 0.5rem 1rem 1rem;
   letter-spacing: 0.5px;
 }
-
 .movie-info h3 {
   margin-top: 0;
 }
-
 .movie-info span {
   background-color: #ffffff;
   padding: 0.25rem 0.5rem;
   border-radius: 3px;
   font-weight: bold;
 }
-
 .movie-info span.green {
   color: lightgreen;
 }
-
 .movie-info span.orange {
   color: orange;
 }
-
 .movie-info span.red {
   color: red;
 }
-
 .overview {
     font-family: 'Noto Sans JP', sans-serif;
   background-color: #000;
@@ -516,9 +489,56 @@ a, a:active, a:hover, a:focus {
  font-size: 25px;
  margin-bottom: 10px;
 }
-
 .movie:hover .overview {
   transform: translateY(0);
-} */
+} 
+
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.progress-steps::before {
+    content: '';
+    background-color: #77777762;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 3px;
+    width: 100%;
+    z-index: -1;
+}
+.progress {
+    background-color: #78092F;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 3px;
+    width: 0%;
+    z-index: -1;
+    transition: 0.4s ease;
+}
+.circle {
+    background-color: #fff;
+    color: #999;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #77777762;
+    transition: 0.4s ease;
+}
+.circle.active-step {
+    border-color: #78092F;
+    background-color: #78092F;
+}
   
 /*----------------- END OF SHOWCASE SECTION --------------*/

@@ -2,6 +2,9 @@ const body = document.querySelector('.showcase');
 const slides = document.querySelectorAll('.slide');
 const leftBtn = document.getElementById('left');
 const rightBtn = document.getElementById('right');
+const progress = document.getElementById('progress');
+const circles = document.querySelectorAll('.circle');
+
 
 let activeSlide = 0
 
@@ -14,6 +17,7 @@ rightBtn.addEventListener('click', () => {
     setActiveSlide()
 })
 leftBtn.addEventListener('click', () => {
+    // currentActive--
     activeSlide--
     if(activeSlide < 0) {
         activeSlide = slides.length - 1
@@ -29,10 +33,38 @@ function setBgToBody(){
 }
 
 function setActiveSlide(){
-    slides.forEach((slide) => slide.classList.remove('active')
-    )
+    slides.forEach((slide) => slide.classList.remove('active'))
     slides[activeSlide].classList.add('active')
 }
+let currentActive = 1 
+
+rightBtn.addEventListener('click', () => {
+    currentActive++
+    if(currentActive > circles.length) {
+        currentActive = 1
+    }
+    update()
+})
+leftBtn.addEventListener('click', () => {
+    currentActive--
+    if(currentActive < 1) {
+        currentActive = slides.length
+    }
+    update()
+})
+function update() {
+        circles.forEach((circle, idx) => {
+        if(idx < currentActive) {
+            circle.classList.add('active-step')
+        } else {
+            circle.classList.remove('active-step')
+        }
+    })
+        const actives = document.querySelectorAll('.active-step')
+
+        progress.style.width = (actives.length - 1) / (circles.length - 1) * 100 + '%'
+}
+
 
 const hamburger = document.querySelector(".hamburger"); 
 const navLinks =  document.querySelector(".navbar");
