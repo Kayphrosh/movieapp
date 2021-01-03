@@ -572,3 +572,39 @@ a, a:active, a:hover, a:focus {
 }
   
 /*----------------- END OF SHOWCASE SECTION --------------*/
+
+/*----------------- FOOTER SECTION --------------*/
+footer {
+    background-color: #cecece;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+}
+.developer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    height: 55px;
+    margin-top: 20px;
+}
+.developer p {
+    font-size: 14px;
+    font-weight: 800;
+}
+.developer .mycontact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 25px;
+    width: 150px;
+}
+.developer .mycontact a {
+    color: #000;
+}
+.mycontact a:hover {
+    color: #78092F;
+    transition: 0.5s ease-in;
+    transform: scale(0.9);
+}
