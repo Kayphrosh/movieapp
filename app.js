@@ -80,9 +80,9 @@ hamburger.addEventListener("click", () => {
         showcase.style.height = "70vh";
         showcase.style.transition = "1000ms ease-in";
         searchInput.style.transform = "translateY(0%)";
-        searchInput.style.top = "10px";
+        searchInput.style.top = "17px";
         hamburger.style.transform = "translateY(0%)";
-        hamburger.style.top = "0px";
+        hamburger.style.top = "10px";
         links.forEach(link =>  {
             link.classList.toggle("fade"); 
     
@@ -108,9 +108,17 @@ hamburger.addEventListener("click", () => {
 
 
 
-const API_URL = 'https://api.themoviedb.org/3/discover/movie?primary_release_year=2020&sort_by=popularity.desc&api_key=def445bf6e7b03a17a250c80ff2931bc&page=12'
+const API_URL = 'https://api.themoviedb.org/3/discover/movie?primary_release_year=2020&sort_by=popularity.desc&api_key=def445bf6e7b03a17a250c80ff2931bc&page=1'
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
 const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=def445bf6e7b03a17a250c80ff2931bc&query="'
+
+// const SEARCH_API = 'https://imdb-api.com/en/API/SearchMovie/k_1c7tyx64'
+
+// const API_URL = 'https://imdb-api.com/en/API/Top250Movies/k_1c7tyx64';
+
+// const IMG_PATH = 'https://imdb-api.com/en/API/Images/k_1c7tyx64/tt1375666/Full'
+
+// // const Trailer = 'https://imdb-api.com/en/API/Trailer/k_1c7tyx64/tt1375666'
 
 const main = document.getElementById('main')
 const form = document.getElementById('form')
@@ -125,12 +133,19 @@ async function getMovies(url) {
 
     showMovies(data.results)
 }
+// getTrailers(Trailer)
+// async function getMoviesTrailer(url) {
+//     const res = await fetch(url)
+//     const data = await res.json()
+
+//     console.log(data.results);
+// }
 
 function showMovies(movies) {
     main.innerHTML = ''
 
     movies.forEach((movie) => {
-        const { title, poster_path, vote_average, overview } = movie
+        const { title, poster_path, vote_count, overview } = movie
 
         const movieEl = document.createElement('div')
         movieEl.classList.add('movie')
@@ -139,7 +154,7 @@ function showMovies(movies) {
             <img src="${IMG_PATH + poster_path}" alt="${title}">
             <div class="movie-info">
           <h3>${title}</h3>
-          <span class="${getClassByRate(vote_average)}">${vote_average}</span>
+          <span class="${getClassByRate(vote_count)}">${vote_count}</span>
             </div>
             <div class="overview">
           <h3>Overview</h3>
