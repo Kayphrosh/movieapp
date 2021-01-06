@@ -108,19 +108,13 @@ hamburger.addEventListener("click", () => {
 
 
 
-const API_URL = 'https://api.themoviedb.org/3/discover/movie?primary_release_year=2020&sort_by=popularity.desc&api_key=def445bf6e7b03a17a250c80ff2931bc&page=1'
+const API_URL = 'https://api.themoviedb.org/3/movie/popular?api_key=def445bf6e7b03a17a250c80ff2931bc&language=en-US&page=1'
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
 const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=def445bf6e7b03a17a250c80ff2931bc&query="'
-
-// const SEARCH_API = 'https://imdb-api.com/en/API/SearchMovie/k_1c7tyx64'
-
-// const API_URL = 'https://imdb-api.com/en/API/Top250Movies/k_1c7tyx64';
-
-// const IMG_PATH = 'https://imdb-api.com/en/API/Images/k_1c7tyx64/tt1375666/Full'
-
-// // const Trailer = 'https://imdb-api.com/en/API/Trailer/k_1c7tyx64/tt1375666'
+const SEARCH_APITV = 'https://api.themoviedb.org/3/search/tv?api_key=def445bf6e7b03a17a250c80ff2931bc&language=en-US&page=1&query="'
 
 const main = document.getElementById('main')
+const main2 = document.getElementById('main2')
 const form = document.getElementById('form')
 const search = document.getElementById('search')
 
@@ -130,22 +124,14 @@ getMovies(API_URL)
 async function getMovies(url) {
     const res = await fetch(url)
     const data = await res.json()
-
     showMovies(data.results)
 }
-// getTrailers(Trailer)
-// async function getMoviesTrailer(url) {
-//     const res = await fetch(url)
-//     const data = await res.json()
-
-//     console.log(data.results);
-// }
 
 function showMovies(movies) {
     main.innerHTML = ''
 
     movies.forEach((movie) => {
-        const { title, poster_path, vote_count, overview } = movie
+        const { title, poster_path, vote_average, overview, release_date   } = movie
 
         const movieEl = document.createElement('div')
         movieEl.classList.add('movie')
@@ -153,13 +139,17 @@ function showMovies(movies) {
         movieEl.innerHTML = `
             <img src="${IMG_PATH + poster_path}" alt="${title}">
             <div class="movie-info">
-          <h3>${title}</h3>
-          <span class="${getClassByRate(vote_count)}">${vote_count}</span>
+                <h3>${title}</h3>
+                <div class="ratingMovie">
+                    <p>RATING </p>
+                    <span class="${getClassByRate(vote_average)}"> ${vote_average}</span>
+                </div>
             </div>
             <div class="overview">
-          <h3>Overview</h3>
-          ${overview}
-        </div>
+                <h3>Overview</h3>
+                <p>${overview}</p>
+                <h5>Released Date: ${release_date}</h5>
+            </div>
         `
         main.appendChild(movieEl)
     })
@@ -179,12 +169,57 @@ form.addEventListener('submit', (e) => {
     e.preventDefault()
 
     const searchTerm = search.value
-
-    if(searchTerm && searchTerm !== '') {
-        getMovies(SEARCH_API + searchTerm)
+    const searchTermTv = search.value
+    if(searchTerm && searchTerm !== '', searchTermTv && searchTermTv !== '') {
+        getMovies(SEARCH_API  + searchTerm)
+        getTvshow(SEARCH_APITV + searchTermTv)
 
         search.value = ''
-    } else {
+    }
+    // else if(searchTerm && searchTerm !== '') {
+    //     getTvshow(SEARCH_APITV + searchTerm)
+    //     search.value = ''
+    // }
+    else {
         window.location.reload()
     }
 }) 
+
+
+const API_URLTv = 'https://api.themoviedb.org/3/tv/popular?api_key=def445bf6e7b03a17a250c80ff2931bc&language=en-US&page=1'
+
+// Get initial movies
+getTvshow(API_URLTv)
+
+async function getTvshow(url) {
+    const res = await fetch(url)
+    const data = await res.json()
+    showTvshow(data.results)
+}
+
+function showTvshow(show) {
+    main2.innerHTML = ''
+
+    show.forEach((tvshow) => {
+        const { name, poster_path, vote_average, overview,   } = tvshow
+
+        const TvEl = document.createElement('div')
+        TvEl.classList.add('tvshow')
+
+        TvEl.innerHTML = `
+            <img src="${IMG_PATH + poster_path}" alt="${name}">
+            <div class="tv-info">
+                <h3>${name}</h3>
+                <div class="ratingTv">
+                    <p>RATING </p>
+                    <span class="${getClassByRate(vote_average)}"> ${vote_average}</span>
+                </div>
+            </div>
+            <div class="overview-tv">
+          <h3>Overview</h3>
+          <p>${overview}</p>
+        </div>
+        `
+        main2.appendChild(TvEl)
+    })
+}
