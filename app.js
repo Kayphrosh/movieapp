@@ -201,7 +201,7 @@ function showTvshow(show) {
     main2.innerHTML = ''
 
     show.forEach((tvshow) => {
-        const { name, poster_path, vote_average, overview,   } = tvshow
+        const { name, poster_path, vote_average, overview,  first_air_date } = tvshow
 
         const TvEl = document.createElement('div')
         TvEl.classList.add('tvshow')
@@ -216,10 +216,20 @@ function showTvshow(show) {
                 </div>
             </div>
             <div class="overview-tv">
-          <h3>Overview</h3>
-          <p>${overview}</p>
-        </div>
+                <h3>Overview</h3>
+                <p>${overview}</p>
+                <h5>Released Date: ${first_air_date}</h5>
+            </div>
         `
         main2.appendChild(TvEl)
     })
+}
+function getClassByRate(vote) {
+    if(vote >= 8) {
+        return 'green'
+    } else if(vote >= 5) {
+        return 'orange'
+    } else {
+        return 'red'
+    }
 }
