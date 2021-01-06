@@ -546,7 +546,7 @@ a, a:active, a:hover, a:focus {
 .overview p, .overview-tv h3 {
     font-size: 12px;
 }
-.overview h5, .overview h5 {
+.overview h5, .overview-tv h5 {
     margin-top: 20px;
     font-size: 16px;
     color: #ffa8a8;
