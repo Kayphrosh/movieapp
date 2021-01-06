@@ -95,7 +95,7 @@ hamburger.addEventListener("click", () => {
     
             hamburger.classList.toggle('toggle');
         });
-        showcase.style.height = "8vh";
+        showcase.style.height = "10vh";
         showcase.style.transition = "1000ms ease-in";
         searchInput.style.transform = "translateY(-50%)";
         searchInput.style.top = "50%";
@@ -131,7 +131,7 @@ function showMovies(movies) {
     main.innerHTML = ''
 
     movies.forEach((movie) => {
-        const { title, poster_path, vote_average, overview, release_date   } = movie
+        const { title, poster_path, vote_average, overview, release_date, backdrop_path   } = movie
 
         const movieEl = document.createElement('div')
         movieEl.classList.add('movie')

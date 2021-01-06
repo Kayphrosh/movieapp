@@ -70,7 +70,7 @@ a, a:active, a:hover, a:focus {
     position: fixed;
     left: 0;
     width: 100%;
-    height: 8vh;
+    height: 10vh;
     color: #ffffff;
     background-color: #000000;
     margin-top: 0;
@@ -133,7 +133,7 @@ a, a:active, a:hover, a:focus {
     height: 80vh;
     width: 90vw;
     border-radius: 20px;
-    margin-top: 10vh;
+    margin-top: 12vh;
     position: relative;
     overflow: hidden;
 }
@@ -161,7 +161,7 @@ a, a:active, a:hover, a:focus {
 #left {
     position: absolute;
     top: 47%;
-    left: 80px;
+    left: 40px;
     background-color: transparent;
     border: none;
     outline: none;
@@ -172,7 +172,7 @@ a, a:active, a:hover, a:focus {
 #right {
     position: absolute;
     top: 47%;
-    right: 80px;
+    right: 40px;
     background-color: transparent;
     border: none;
     outline: none;
@@ -269,11 +269,11 @@ a, a:active, a:hover, a:focus {
     }
     #left {
         font-size: 34px;
-        left: 10px;
+        left: 5px;
     }
     #right {
         font-size: 34px;
-        right: 10px;
+        right: 5px;
     }
     .showcase {
         position: relative;
@@ -426,7 +426,7 @@ a, a:active, a:hover, a:focus {
 /*---------SECTIONS NAV SECTION------------*/
 .section-links {
     margin-top: 10px;
-    padding: 10px 2rem;
+    padding: 10px 1rem;
     background-color: #1a1a1a;
 }
 .section-links button {
@@ -464,7 +464,10 @@ a, a:active, a:hover, a:focus {
   flex-direction: column;
   background-color: #1a1a1a;
 }
-.main, .anticipating-movie {
+.anticipating {
+    margin-top: 8vh;
+}
+.main, .anticipating-movie, .anticipating-tv {
   display: flex;
   justify-content: center;
   flex-wrap: wrap; 
@@ -629,7 +632,7 @@ footer {
 .footer-search h5 {
     font-size: 2rem;
     font-weight: 900;
-    font-style: italic;
+    padding: 0 30px;
 }
 .footer-search input {
     width: 100%;
@@ -637,14 +640,14 @@ footer {
     border-radius: 20px;
     outline: none;
     border: 2px solid #78092F;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .developer {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
-    height: 55px;
+    min-height: 60px;
     margin-top: 20px;
 }
 .developer p {
@@ -656,19 +659,26 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     font-size: 25px;
-    width: 150px;
+    min-width: 250px;
 }
 .developer .mycontact a {
     color: #000;
+    transition: 200ms ease;
 }
 .mycontact a:hover {
     color: #78092F;
     transition: 0.5s ease-in;
-    transform: scale(0.9);
+    transform: scale(0.95);
+}
+.rights {
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+    margin: 20px 0;
 }
 
 @media (max-width: 768px) {
     .footer-search h5 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 }
