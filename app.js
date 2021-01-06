@@ -79,10 +79,10 @@ hamburger.addEventListener("click", () => {
         {  
         showcase.style.height = "70vh";
         showcase.style.transition = "1000ms ease-in";
-        searchInput.style.transform = "translateY(0%)";
-        searchInput.style.top = "12.5px";
+        searchInput.style.transform = "translateY(8.5px)";
+        searchInput.style.top = "8.5px";
         hamburger.style.transform = "translateY(0%)";
-        hamburger.style.top = "5px";
+        hamburger.style.top = "10px";
         links.forEach(link =>  {
             link.classList.toggle("fade"); 
     

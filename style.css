@@ -285,8 +285,8 @@ a, a:active, a:hover, a:focus {
     }
     .search {
         position: absolute;
-        top: 45% ;
-        transform: translateY(-45%);
+        top: 50% ;
+        transform: translateY(-50%);
         right: 10px;
     }
     .navbar{
