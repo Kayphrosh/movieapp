@@ -148,7 +148,7 @@ function showMovies(movies) {
             <div class="overview">
                 <h3>Overview</h3>
                 <p>${overview}</p>
-                <h5>Released Date: ${release_date}</h5>
+                <h5>Released date: ${release_date}</h5>
             </div>
         `
         main.appendChild(movieEl)
@@ -218,7 +218,7 @@ function showTvshow(show) {
             <div class="overview-tv">
                 <h3>Overview</h3>
                 <p>${overview}</p>
-                <h5>Released Date: ${first_air_date}</h5>
+                <h5>first aired date: ${first_air_date}</h5>
             </div>
         `
         main2.appendChild(TvEl)
