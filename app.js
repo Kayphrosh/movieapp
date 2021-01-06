@@ -80,9 +80,9 @@ hamburger.addEventListener("click", () => {
         showcase.style.height = "70vh";
         showcase.style.transition = "1000ms ease-in";
         searchInput.style.transform = "translateY(0%)";
-        searchInput.style.top = "17px";
+        searchInput.style.top = "12.5px";
         hamburger.style.transform = "translateY(0%)";
-        hamburger.style.top = "10px";
+        hamburger.style.top = "5px";
         links.forEach(link =>  {
             link.classList.toggle("fade"); 
     
@@ -95,7 +95,7 @@ hamburger.addEventListener("click", () => {
     
             hamburger.classList.toggle('toggle');
         });
-        showcase.style.height = "10vh";
+        showcase.style.height = "9vh";
         showcase.style.transition = "1000ms ease-in";
         searchInput.style.transform = "translateY(-50%)";
         searchInput.style.top = "50%";

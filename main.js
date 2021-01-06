@@ -144,7 +144,7 @@ function showAnticipatingTv(anticipatingTv) {
                     <span class="${getClassByRate(vote_average)}"> ${vote_average}</span>
                 </div>
             </div>
-            <div class="overview">
+            <div class="overview-tv">
           <h3>Overview</h3>
           <p>${overview}</p>
           <h5>First air date: ${first_air_date}</h5>

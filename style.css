@@ -279,13 +279,14 @@ a, a:active, a:hover, a:focus {
         position: relative;
     }
     .top-bar {
+        height: 9vh;
         flex-direction: column;
         overflow: hidden;
     }
     .search {
         position: absolute;
-        top: 50% ;
-        transform: translateY(-50%);
+        top: 45% ;
+        transform: translateY(-45%);
         right: 10px;
     }
     .navbar{
@@ -631,7 +632,7 @@ footer {
 }
 .footer-search h5 {
     font-size: 2rem;
-    font-weight: 900;
+    font-weight: 600;
     padding: 0 30px;
 }
 .footer-search input {
@@ -659,7 +660,8 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     font-size: 25px;
-    min-width: 250px;
+    min-width: 240px;
+    max-width: 100%;
 }
 .developer .mycontact a {
     color: #000;
@@ -675,6 +677,9 @@ footer {
     justify-content: center;
     padding: 0 20px;
     margin: 20px 0;
+}
+.rights p {
+    font-size: 14px;
 }
 
 @media (max-width: 768px) {
