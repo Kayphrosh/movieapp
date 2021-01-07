@@ -541,14 +541,14 @@ a, a:active, a:hover, a:focus {
     right: 0;
     max-height: 100%;
     transform: translateX(101%);
-    transition: transform 0.8s ease-in;
+    transition: transform 0.3s ease-in;
     font-size: 14px;
 }
 .overview h3, .overview-tv h3 {
  font-size: 25px;
  margin-bottom: 10px;
 }
-.overview p, .overview-tv h3 {
+.overview p, .overview-tv p {
     font-size: 12px;
 }
 .overview h5, .overview-tv h5 {
