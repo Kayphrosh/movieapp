@@ -74,7 +74,7 @@ const mediaQuery = window.matchMedia('(max-width: 768px)');
 const searchInput = document.querySelector(".search");
 
 
-hamburger.addEventListener("click", () => {
+hamburger.addEventListener("click", (e) => {
     if("mediaQuery.matches", navLinks.classList.toggle("open"))
         {  
         showcase.style.height = "70vh";
@@ -103,6 +103,7 @@ hamburger.addEventListener("click", () => {
         hamburger.style.top = "50%";
     }
     
+    e.preventDefault()
    
 });
 
@@ -245,9 +246,11 @@ function runEvent (e) {
 
     e.preventDefault();
 }
-function scrollToTop() {
+function scrollToTop(e) {
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
     })
+
+    e.preventDefault()
 }

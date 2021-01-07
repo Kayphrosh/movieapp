@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Movie App</title>
 </head>
-<body class="noSelect" onclick="scrollToTop();">
+<body class="noSelect" >
     <section class="showcase">
         <div class="top-bar">
             <div class="hamburger">
@@ -136,9 +136,6 @@
                 <span class="iconify" data-icon="cib:pinterest-p" data-inline="false"></span>
             </div>
         </div>
-        <section class="scroll-up">
-            <button id="scroll-up-btn"><span class="iconify" data-icon="bx:bxs-up-arrow-circle" data-inline="false"></span></button>
-        </section>
     </section>
     <section>
         <div class="section-links">
@@ -184,6 +181,9 @@
           
 
         </footer>
+    </section>
+    <section class="scroll-up"  onclick="scrollToTop();">
+        <button id="scroll-up-btn"><span class="iconify" data-icon="bx:bxs-up-arrow-circle" data-inline="false"></span></button>
     </section>
     <script src="app.js"></script>
 </body>
