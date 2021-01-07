@@ -233,3 +233,21 @@ function getClassByRate(vote) {
         return 'red'
     }
 }
+
+// const scrollUp = document.querySelector('.scroll-up');
+const scrollUpbtn = document.getElementById('scroll-up-btn');
+
+window.addEventListener('scroll', runEvent)
+
+function runEvent (e) {
+    scrollUpbtn.classList.toggle('active', window.scrollY > 100 )
+
+
+    e.preventDefault();
+}
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    })
+}

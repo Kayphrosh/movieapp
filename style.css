@@ -683,6 +683,31 @@ footer {
     font-size: 14px;
 }
 
+.scroll-up {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 10px;
+    right: 0px;
+    align-items: center;
+    z-index: 11;
+}
+.scroll-up button {
+    font-size: 3.5rem;
+    background-color: transparent;
+    color: #78092F;
+    outline: none;
+    border: none;
+    margin: auto;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.4s ease;
+    visibility: hidden;
+}
+.scroll-up button.active {
+    visibility: visible;
+    transition: 0.1s ease;
+}
 @media (max-width: 768px) {
     .footer-search h5 {
         font-size: 1.2rem;
