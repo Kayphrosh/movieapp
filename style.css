@@ -685,7 +685,7 @@ footer {
 
 .scroll-up button {
     position: fixed;
-    bottom: 10px;
+    bottom: 90vh;
     right: 0px;
     font-size: 3.5rem;
     background-color: transparent;
