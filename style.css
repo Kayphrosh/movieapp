@@ -59,7 +59,7 @@ a, a:active, a:hover, a:focus {
     background-blend-mode: multiply;
     background-position: center center;
     background-size: cover;
-    transition: 0.4s;
+    transition: 0.2s;
 }
 .top-bar {
     width: 100%;
@@ -150,7 +150,7 @@ a, a:active, a:hover, a:focus {
     position: absolute;
     top: 0;
     left: 0;
-    transition: 0.4s ease;
+    transition: 0.2s ease;
 }
 .slide.active {
     opacity: 1;
@@ -293,7 +293,7 @@ a, a:active, a:hover, a:focus {
         display: flex;
         justify-content: space-around;
         flex-direction: column;
-        transition: ease-in 1000ms;
+        transition: ease-in 100ms;
         overflow: hidden;
         min-height: 100%;
         width: 100vw;
@@ -328,13 +328,13 @@ a, a:active, a:hover, a:focus {
     }
     .navbar.open {
         pointer-events: all;
-        transition: all 2s ease .2s;
+        transition: all 0.4s ease;
     }
     .navbar li {
         opacity: 0;
         overflow: hidden;
         align-self: center;
-        transition: ease 2s;
+        transition: ease 0.4s;
     }
     .navbar li a{
         font-size: 16px;

@@ -78,9 +78,9 @@ hamburger.addEventListener("click", (e) => {
     if("mediaQuery.matches", navLinks.classList.toggle("open"))
         {  
         showcase.style.height = "70vh";
-        showcase.style.transition = "1000ms ease-in";
-        searchInput.style.transform = "translateY(8.5px)";
-        searchInput.style.top = "8.5px";
+        showcase.style.transition = "100ms ease-in";
+        searchInput.style.transform = "translateY(7.5px)";
+        searchInput.style.top = "9px";
         hamburger.style.transform = "translateY(0%)";
         hamburger.style.top = "10px";
         links.forEach(link =>  {
@@ -96,7 +96,7 @@ hamburger.addEventListener("click", (e) => {
             hamburger.classList.toggle('toggle');
         });
         showcase.style.height = "9vh";
-        showcase.style.transition = "1000ms ease-in";
+        showcase.style.transition = "100ms ease-in";
         searchInput.style.transform = "translateY(-50%)";
         searchInput.style.top = "50%";
         hamburger.style.transform = "translateY(-50%)";
