@@ -70,17 +70,17 @@ const hamburger = document.querySelector(".hamburger");
 const navLinks =  document.querySelector(".navbar");
 const links = document.querySelectorAll(".navbar li");
 const showcase = document.querySelector(".top-bar");
-const mediaQuery = window.matchMedia('(max-width: 768px)');
+const mediaQuery = window.matchMedia('(min-width: 768px)');
 const searchInput = document.querySelector(".search");
 
 
 hamburger.addEventListener("click", (e) => {
-    if("mediaQuery.matches", navLinks.classList.toggle("open"))
+    if(navLinks.classList.toggle("open"))
         {  
         showcase.style.height = "70vh";
-        showcase.style.transition = "100ms ease-in";
-        searchInput.style.transform = "translateY(7.5px)";
-        searchInput.style.top = "9px";
+        showcase.style.transition = "500ms ease-in";
+        searchInput.style.transform = "translateY(-4px)";
+        searchInput.style.top = "17px";
         hamburger.style.transform = "translateY(0%)";
         hamburger.style.top = "10px";
         links.forEach(link =>  {
@@ -89,20 +89,21 @@ hamburger.addEventListener("click", (e) => {
             hamburger.classList.toggle('toggle' );
         });
   
-    } else{
+    } else {
         links.forEach(link =>  {
             link.classList.toggle("fade"); 
     
             hamburger.classList.toggle('toggle');
         });
         showcase.style.height = "9vh";
-        showcase.style.transition = "100ms ease-in";
+        showcase.style.transition = "500ms ease-in";
         searchInput.style.transform = "translateY(-50%)";
         searchInput.style.top = "50%";
         hamburger.style.transform = "translateY(-50%)";
         hamburger.style.top = "50%";
-    }
-    
+    } 
+
+     
     e.preventDefault()
    
 });

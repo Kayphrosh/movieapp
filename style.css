@@ -104,6 +104,9 @@ a, a:active, a:hover, a:focus {
     width: 270px;
     position: relative;
     align-items: center;
+    position: absolute;
+    top: 0;
+    right: 30px;
 }
 .search input {
     position: relative;
@@ -324,7 +327,7 @@ a, a:active, a:hover, a:focus {
         cursor: pointer;
         z-index: 100;
         overflow: hidden;
-        padding: 7px 20px;
+        padding: 0px 20px;
     }
     .navbar.open {
         pointer-events: all;
@@ -345,22 +348,19 @@ a, a:active, a:hover, a:focus {
     
     .navbar li:nth-child(1){
         margin-top: 50px;
-        transition: all 0.5s ease 0.2s;
+        transition: all 0.2s ease 0.2s;
     }
     .navbar li:nth-child(2){
-        transition: all 0.5s ease 0.2s;
+        transition: all 0.2s ease 0.2s;
     }
     .navbar li:nth-child(3){
-        transition: all 0.5s ease 0.6s;
+        transition: all 0.2s ease 0.4s;
     }
     .navbar li:nth-child(4) {
-        transition: all 0.5s ease 0.6s;
+        transition: all 0.2s ease 0.4s;
     }
     .navbar li:nth-child(5) {
-        transition: all 0.5s ease 1.2s;
-    }
-    .navbar li:nth-child(6) {
-        transition: all 0.5s ease 1.8s;
+        transition: all 0.2s ease 0.6s;
     }
     
     li.fade {
@@ -698,6 +698,11 @@ footer {
     z-index: 11;
     transition: 0.4s ease;
     visibility: hidden;
+}
+.scroll-up button:hover {
+    color: #fff;
+    transition: 100ms ease;
+    transform: scale(0.99);
 }
 .scroll-up button.active {
     bottom: 10px;

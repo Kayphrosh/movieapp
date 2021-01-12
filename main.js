@@ -10,7 +10,7 @@ hamburger.addEventListener("click", () => {
     if("mediaQuery.matches", navLinks.classList.toggle("open"))
         {  
         showcase.style.height = "70vh";
-        showcase.style.transition = "1000ms ease-in";
+        showcase.style.transition = "500ms ease-in";
         searchInput.style.transform = "translateY(0%)";
         searchInput.style.top = "17px";
         hamburger.style.transform = "translateY(0%)";
@@ -28,7 +28,7 @@ hamburger.addEventListener("click", () => {
             hamburger.classList.toggle('toggle');
         });
         showcase.style.height = "10vh";
-        showcase.style.transition = "1000ms ease-in";
+        showcase.style.transition = "500ms ease-in";
         searchInput.style.transform = "translateY(-50%)";
         searchInput.style.top = "50%";
         hamburger.style.transform = "translateY(-50%)";
