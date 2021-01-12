@@ -105,7 +105,6 @@ a, a:active, a:hover, a:focus {
     position: relative;
     align-items: center;
     position: absolute;
-    top: 0;
     right: 30px;
 }
 .search input {
